@@ -49,4 +49,24 @@ public class CustomerServiceIMPL implements CustomerService {
         }
 
     }
+
+    @Override
+    public CustomerDTO getCustomerById(int customerId) {
+        if(customerRepo.existsById(customerId)){
+            Customer customer = customerRepo.getReferenceById(customerId);
+            CustomerDTO customerDTO = new CustomerDTO(
+                    customer.getCustomerId(),
+                    customer.getCustomerName(),
+                    customer.getCustomerAddress(),
+                    customer.getCustomerSalary(),
+                    customer.getContactNumber(),
+                    customer.getNic(),
+                    customer.isActive()
+            );
+            return customerDTO;
+        }else {
+            throw new RuntimeException("No Data Found for Customer ID: ");
+        }
+
+    }
 }
