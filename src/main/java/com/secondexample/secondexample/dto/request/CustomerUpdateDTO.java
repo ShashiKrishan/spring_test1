@@ -1,34 +1,22 @@
-package com.secondexample.secondexample.dto;
+package com.secondexample.secondexample.dto.request;
 
-import java.util.ArrayList;
-
-public class CustomerDTO {
+public class CustomerUpdateDTO {
 
     private int customerId;
     private String customerName;
     private String customerAddress;
     private double customerSalary;
-    private ArrayList contactNumber;
-    private String nic;
-    private boolean active;
 
-    public CustomerDTO() {
+    public CustomerUpdateDTO() {
+
 
     }
 
-    public CustomerDTO(int customerId, String customerName, String customerAddress, double customerSalary, ArrayList contactNumber, String nic, boolean active) {
+    public CustomerUpdateDTO(int customerId, String customerName, String customerAddress, double customerSalary) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.customerSalary = customerSalary;
-        this.contactNumber = contactNumber;
-        this.nic = nic;
-        this.active = active;
-    }
-
-    public CustomerDTO(int customerId, String customerName) {
-        this.customerId = customerId;
-        this.customerName = customerName;
     }
 
     public int getCustomerId() {
@@ -63,40 +51,13 @@ public class CustomerDTO {
         this.customerSalary = customerSalary;
     }
 
-    public ArrayList getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(ArrayList contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public String getNic() {
-        return nic;
-    }
-
-    public void setNic(String nic) {
-        this.nic = nic;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
     @Override
     public String toString() {
-        return "CustomerDTO{" +
+        return "CustomerUpdateDTO{" +
                 "customerId=" + customerId +
                 ", customerName='" + customerName + '\'' +
                 ", customerAddress='" + customerAddress + '\'' +
                 ", customerSalary=" + customerSalary +
-                ", contactNumber=" + contactNumber +
-                ", nic='" + nic + '\'' +
-                ", active=" + active +
                 '}';
     }
 }
